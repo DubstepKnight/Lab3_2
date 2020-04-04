@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import java.util.Locale;
 
@@ -17,6 +18,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageView image = findViewById(R.id.oamkLogo);
+
+//        public void getThePicture(ImageView image ) {
+//            Log.d("picture", "the function gets called ");
+//
+//            image.setImageResource();
+//
+//        }
+
     }
 
     public void openOamk(View view) {
@@ -41,6 +51,5 @@ public class MainActivity extends AppCompatActivity {
         Intent openPageIntent = new Intent(Intent.ACTION_VIEW, typedUri);
         startActivity(openPageIntent);
     }
-
 
 }
