@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openOamk(View view) {
-        Uri oamkUrl = Uri.parse("http://www.oamk.fi");
-        Intent webIntent = new Intent(Intent.ACTION_VIEW, oamkUrl);
-        startActivity(webIntent);
+        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", 64.999567, 25.511465);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(intent);
     }
 
     public void callMe(View view) {
@@ -39,5 +41,6 @@ public class MainActivity extends AppCompatActivity {
         Intent openPageIntent = new Intent(Intent.ACTION_VIEW, typedUri);
         startActivity(openPageIntent);
     }
+
 
 }
